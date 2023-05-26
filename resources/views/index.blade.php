@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Perpustakaan ITTelkom Surabaya | @yield('title')</title>
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/bootstrap.css"> //akses ke boostrap 
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/bootstrap.css"> <!-- akses ke boostrap -->
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <script type="text/javascript" src="{{ asset('assets') }}/js/jquery-3.2.1.min.js"></script> //akses ke query
+        <script type="text/javascript" src="{{ asset('assets') }}/js/jquery-3.2.1.min.js"></script> <!-- akses ke query -->
         <script type="text/javascript" src="{{ asset('assets') }}/js/bootstrap.js"></script> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
