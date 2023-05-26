@@ -13,18 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route untuk Login
+Route::get('/', function () {return view('welcome');});
+
+//Route untuk Home
+Route::get('/home', function() {return view('view_home');});
 
 //Route untuk Data Buku
 Route::get('/buku', 'BukuController@bukutampil');
 Route::post('/buku/tambah','BukuController@bukutambah');
 Route::get('/buku/hapus/{id_buku}','BukuController@bukuhapus');
 Route::put('/buku/edit/{id_buku}', 'BukuController@bukuedit');
-
-//Route untuk Data Buku
-Route::get('/home', function(){return view('view_home');});
 
 //Route untuk Data Anggota
 Route::get('/anggota', 'AnggotaController@anggotatampil');
@@ -43,3 +42,6 @@ Route::get('/pinjam', 'PinjamController@pinjamtampil');
 Route::post('/pinjam/tambah','PinjamController@pinjamtambah');
 Route::get('/pinjam/hapus/{id_pinjam}','PinjamController@pinjamhapus');
 Route::put('/pinjam/edit/{id_pinjam}', 'PinjamController@pinjamedit');
+
+//Route untuk Logout
+Route::get('/logout', function() {return view('welcome');});
