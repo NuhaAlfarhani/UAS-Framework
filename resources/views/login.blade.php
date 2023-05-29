@@ -1,4 +1,3 @@
-@extends('index')
 @section('title', 'Login')
 
 @section('loginForm')
@@ -146,3 +145,7 @@
 </div>
 <!-- Pills content -->
 @endsection
+
+@include('menu')
+@include('banner')
+@include('sidebar')

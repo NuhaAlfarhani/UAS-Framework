@@ -1,4 +1,4 @@
-@extends('index')
+@include('header')
 @section('title', 'Home')
 
 @section('isihalaman')
@@ -22,3 +22,10 @@
         Perpustakaan adalah institusi yang mengumpulkan pengetahuan tercetak dan terekam, mengelolanya dengan cara khusus guna memenuhi kebutuhan intelektualitas para penggunanya melalui berbagai cara interaksi pengetahuan.
     </p>
 @endsection
+
+@include('menu')
+@include('banner')
+@include('sidebar')
+@include('konten')
+
+@include('footer')
