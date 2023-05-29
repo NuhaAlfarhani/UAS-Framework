@@ -1,4 +1,4 @@
-@extends('index')
+@include('header')
 @section('title', 'Peminjaman')
 
 @section('isihalaman')
@@ -189,3 +189,9 @@
     </div>
     
 @endsection
+
+@include('menu')
+@include('banner')
+@yield('isihalaman')
+
+@include('footer')
