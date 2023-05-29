@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use illuminate\Pagination\Paginator;
+use App\Http\Controllers\BukuController;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -20,20 +21,22 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
+    protected $namespace = 'App\Http\Controllers';
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      *
      * @return void
      */
-    protected $namespace = 'App\\Http\\Controller';
+    // protected $namespace = 'App\\Http\\Controllers';
     public function boot()
     {
         Paginator::useBootstrap();
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
+            Route::prefix('api')
+                ->middleware('api')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
@@ -41,6 +44,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        Route::get('/buku', [BukuController::class, 'bukutampil']);
     }
 
     /**

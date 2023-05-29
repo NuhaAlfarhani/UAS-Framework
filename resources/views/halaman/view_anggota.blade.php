@@ -1,8 +1,8 @@
-@extends('index')
+@include('header')
 @section('title', 'Anggota')
 
 @section('isihalaman')
-    <h3><center>Daftar Anggota Perpustakaan Universitas Semarang</center></h3>
+    <h3><center>Daftar Anggota Perpustakaan Institut Teknologi Telkom Surabaya</center></h3>
     
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAnggotaTambah"> 
         Tambah Data anggota 
@@ -158,3 +158,9 @@
     </div>
     
 @endsection
+
+@include('menu')
+@include('banner')
+@yield('isihalaman')
+
+@include('footer')

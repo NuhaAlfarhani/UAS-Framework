@@ -1,4 +1,4 @@
-@extends('index')
+@include('header')
 @section('title', 'Petugas')
 
 @section('isihalaman')
@@ -128,3 +128,9 @@
     <!-- Akhir Modal tambah data buku -->
     
 @endsection
+
+@include('menu')
+@include('banner')
+@yield('isihalaman')
+
+@include('footer')

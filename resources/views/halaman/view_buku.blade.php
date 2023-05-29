@@ -1,8 +1,8 @@
-@extends('index')
+@include('header')
 @section('title', 'Buku')
 
 @section('isihalaman')
-    <h3><center>Daftar Buku Perpustakaan Universitas Semarang</center></h3>
+    <h3><center>Daftar Buku Perpustakaan Institut Teknologi Telkom Surabaya</center></h3>
     
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalBukuTambah"> 
         Tambah Data Buku 
@@ -157,3 +157,9 @@
     </div>
     
 @endsection
+
+@include('menu')
+@include('banner')
+@yield('isihalaman')
+
+@include('footer')
