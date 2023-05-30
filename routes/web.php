@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,11 @@ use App\Http\Controllers\BukuController;
 
 //Route untuk Login
 Route::get('/', function () {return view('welcome');});
+
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'loginPost'])->name('login');
+});
 
 //Route untuk Home
 Route::get('/home', function() {return view('view_home');});
@@ -48,4 +54,6 @@ Route::get('/pinjam/hapus/{id_pinjam}','PinjamController@pinjamhapus');
 Route::put('/pinjam/edit/{id_pinjam}', 'PinjamController@pinjamedit');
 
 //Route untuk Logout
-Route::get('/logout', function() {return view('welcome');});
+Route::group(['middleware' => 'auth'], function () {
+    Route::delete('/logout', [LoginController::class, 'logout'])->name('logout');
+});

@@ -17,7 +17,7 @@
             <div class="col-md-3">
                 Copyright &copy; 2023. All right reserves
                 <p>
-                Developed by @nonymous
+                Developed by <a style="color: whitesmoke;" href="https://www.instagram.com/ittelkomsurabaya/">IT Telkom Surabaya</a>
             </div>
         </div>
     </div>
