@@ -19,15 +19,19 @@
                     <a class="nav-link" href="/petugas">Data Petugas</a>
                 </li>
 
-                <li class="nav-item"> 
-                    <a class="nav-link" href="/pinjam">Data Peminjaman</a> 
+                <li class="nav-item">
+                    <a class="nav-link" href="/pinjam">Data Peminjaman</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-light" type="submit">Log Out</button>
+                    </form>
                 </li>
             </ul>
         </div>
-    </nav>            
+    </nav>
 </div>
 <!--akhir MENU NAVBAR-->
