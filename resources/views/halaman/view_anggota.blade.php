@@ -50,9 +50,9 @@
                                     @csrf
                                     {{ method_field('PUT') }}
                                     <div class="form-group row">
-                                        <label for="id_anggota" class="col-sm-4 col-form-label">nim</label>
+                                        <label for="id_anggota" class="col-sm-4 col-form-label">NIM</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="nim" name="nim" value="{{ $a->nim}}">
+                                            <input type="text" class="form-control" id="nim" name="nim" value="{{$a->nim}}" readonly>
                                         </div>
                                     </div>
 

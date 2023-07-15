@@ -50,7 +50,7 @@
                                             <div class="form-group row">
                                                 <label for="id_buku" class="col-sm-4 col-form-label">Kode Buku</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Masukan Kode Buku">
+                                                    <input type="text" class="form-control" id="kode_buku" name="kode_buku" value="{{$bk->kode_buku}}" readonly>
                                                 </div>
                                             </div>
 

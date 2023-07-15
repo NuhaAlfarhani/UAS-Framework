@@ -45,9 +45,17 @@
                                             @csrf
                                             {{ method_field('PUT') }}
                                             <div class="form-group row">
+                                                <label for="id_petugas" class="col-sm-4 col-form-label">ID Petugas</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="id_petugas" name="id_petugas" value="{{$p->id_petugas}}" readonly>
+                                                </div>
+                                            </div>
+
+                                            <p>
+                                            <div class="form-group row">
                                                 <label for="id_petugas" class="col-sm-4 col-form-label">Nama Petugas</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Masukkan Nama Petugas">
+                                                    <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" value="{{$p->nama_petugas}}">
                                                 </div>
                                             </div>
 
