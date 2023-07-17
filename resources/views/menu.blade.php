@@ -4,23 +4,23 @@
         <div>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="{{route('home')}}">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/buku">Data Buku</a>
+                    <a class="nav-link" href="{{route('buku')}}">Data Buku</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/anggota">Data Anggota</a>
+                    <a class="nav-link" href="{{route('anggota')}}">Data Anggota</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/petugas">Data Petugas</a>
+                    <a class="nav-link" href="{{route('petugas')}}">Data Petugas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/pinjam">Data Peminjaman</a>
+                    <a class="nav-link" href="{{route('pinjam')}}">Data Peminjaman</a>
                 </li>
 
                 <li class="nav-item">

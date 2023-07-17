@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\AnggotaController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\PinjamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,45 +22,41 @@ use App\Http\Controllers\LoginController;
 //Route untuk Login
 Route::get('/', function () {return view('welcome');});
 
-Route::group(['middleware' => 'guest'], function () {
-    Route::get('/login', [LoginController::class, 'login'])->name('login');
-    Route::post('/login', [LoginController::class, 'loginPost'])->name('login');
-});
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'loginPost'])->name('login');
 
 Route::group(['middleware'=>'auth'], function(){
     //Route untuk Home
     Route::get('/home', function () {
-        return view('view_home');
+        return view('home');
     });
 
-    //Route untuk Data Buku
-    Route::get('/buku', 'BukuController@bukutampil');
-    Route::post('/buku/tambah', 'BukuController@bukutambah');
-    Route::get('/buku/hapus/{id_buku}', 'BukuController@bukuhapus');
-    Route::put('/buku/edit/{id_buku}', 'BukuController@bukuedit');
+    // Route untuk Data Buku
+    Route::get('/buku/tampil', [BukuController::class, 'bukutampil'])->name('buku');
+    Route::post('/buku/tambah', [BukuController::class, 'bukutambah']);
+    Route::get('/buku/hapus/{id_buku}', [BukuController::class, 'bukuhapus']);
+    Route::put('/buku/edit/{id_buku}', [BukuController::class, 'bukuedit']);
 
-    //Route untuk Data Buku
-    Route::get('/home', function () {
-        return view('view_home');
-    });
+    // Route untuk Data Anggota
+    Route::get('/anggota/tampil', [AnggotaController::class, 'anggotatampil'])->name('anggota');
+    Route::post('/anggota/tambah', [AnggotaController::class, 'anggotatambah']);
+    Route::get('/anggota/hapus/{id_anggota}', [AnggotaController::class, 'anggotahapus']);
+    Route::put('/anggota/edit/{id_anggota}', [AnggotaController::class, 'anggotaedit']);
 
-    //Route untuk Data Anggota
-    Route::get('/anggota', 'AnggotaController@anggotatampil');
-    Route::post('/anggota/tambah', 'AnggotaController@anggotatambah');
-    Route::get('/anggota/hapus/{id_anggota}', 'AnggotaController@anggotahapus');
-    Route::put('/anggota/edit/{id_anggota}', 'AnggotaController@anggotaedit');
+    // Route untuk Data Petugas
+    
+    Route::get('/petugas/tampil', [PetugasController::class, 'petugastampil'])->name('petugas');
+    Route::post('/petugas/tambah', [PetugasController::class, 'petugastambah']);
+    Route::get('/petugas/hapus/{id_petugas}', [PetugasController::class, 'petugashapus']);
+    Route::put('/petugas/edit/{id_petugas}', [PetugasController::class, 'petugasedit']);
 
-    //Route untuk Data Petugas
-    Route::get('/petugas', 'PetugasController@petugastampil');
-    Route::post('/petugas/tambah', 'PetugasController@petugastambah');
-    Route::get('/petugas/hapus/{id_petugas}', 'PetugasController@petugashapus');
-    Route::put('/petugas/edit/{id_petugas}', 'PetugasController@petugasedit');
-
-    //Route untuk Data Peminjaman
-    Route::get('/pinjam', 'PinjamController@pinjamtampil');
-    Route::post('/pinjam/tambah', 'PinjamController@pinjamtambah');
-    Route::get('/pinjam/hapus/{id_pinjam}', 'PinjamController@pinjamhapus');
-    Route::put('/pinjam/edit/{id_pinjam}', 'PinjamController@pinjamedit');
+    // Route untuk Data Pinjam
+    Route::get('/pinjam/tampil', [PinjamController::class, 'pinjamtampil'])->name('pinjam');
+    Route::post('/pinjam/tambah', [PinjamController::class, 'pinjamtambah']);
+    Route::get('/pinjam/hapus/{id_pinjam}', [PinjamController::class, 'pinjamhapus']);
+    Route::put('/pinjam/edit/{id_pinjam}', [PinjamController::class, 'pinjamedit']);
 
     Route::delete('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

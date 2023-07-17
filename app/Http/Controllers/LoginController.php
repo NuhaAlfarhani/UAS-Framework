@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -13,7 +12,11 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return view('login', ['title' => 'Login | Perpustakaan ITTS']);
+        if (Auth::check()) {
+            return '/home';
+        } else {
+            return view('login', ['title' => 'Login | Perpustakaan ITTS']);
+        }
     }
 
     public function loginPost(Request $request)
