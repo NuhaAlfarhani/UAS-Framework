@@ -47,7 +47,7 @@ class PinjamController extends Controller
             'id_anggota' => $request->id_anggota,
             'id_buku' => $request->id_buku
         ]);
-        return redirect('/pinjam');
+        return redirect('/pinjam/tampil');
     }
 
     //method untuk hapus data peminjaman

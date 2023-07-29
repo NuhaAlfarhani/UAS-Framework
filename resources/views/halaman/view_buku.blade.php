@@ -7,8 +7,10 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalBukuTambah"> 
         Tambah Data Buku 
     </button>
-
-    <p>
+        <a href="{{ route('halaman.view_buku-pdf') }}" target="_blank">
+            <button class="btn btn-success">Download PDF</button>
+        </a>
+  <p>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -32,7 +34,6 @@
                     <td>{{$bk->pengarang}}</td>
                     <td>{{$bk->kategori}}</td>
                     <td align="center">
-                        
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalBukuEdit{{$bk->id_buku}}"> 
                             Edit
                         </button>
@@ -89,7 +90,7 @@
                             </div>
                         </div>
                         |
-                        <a href="buku/hapus/{{$bk->id_buku}}" onclick="return confirm('Yakin mau dihapus?')">
+                        <a href="/buku/hapus/{{$bk->id_buku}}" onclick="return confirm('Yakin mau dihapus?')">
                             <button class="btn-danger">
                                 Delete
                             </button>

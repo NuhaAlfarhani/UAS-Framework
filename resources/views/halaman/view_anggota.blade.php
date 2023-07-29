@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 |
-                <a href="anggota/hapus/{{$a->id_anggota}}" onclick="return confirm('Yakin mau dihapus?')">
+                <a href="/anggota/hapus/{{$a->id_anggota}}" onclick="return confirm('Yakin mau dihapus?')">
                     <button class="btn-danger">
                         Delete
                     </button>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 //panggil model BukuModel
 use App\Models\BukuModel;
+
+use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
@@ -67,4 +69,11 @@ class BukuController extends Controller
 
         return redirect()->back();
     }
-}
+
+    public function downloadpdf()
+    {
+        $data = BukuModel::all();
+        $pdf = Pdf::loadView('halaman.view_buku-pdf', ['data'=>$data])->setPaper('A4', 'portrait');
+        return $pdf->download('buku.pdf');
+    }
+}   

@@ -35,7 +35,7 @@ class AnggotaController extends Controller
             'hp' => $request->hp
         ]);
 
-        return redirect('/anggota');
+        return redirect('/anggota/tampil');
     }
 
      //method untuk hapus data anggota

@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         |
-                        <a href="pinjam/hapus/{{$p->id_pinjam}}" onclick="return confirm('Yakin mau dihapus?')">
+                        <a href="/pinjam/hapus/{{$p->id_pinjam}}" onclick="return confirm('Yakin mau dihapus?')">
                             <button class="btn-danger">
                                 Delete
                             </button>
